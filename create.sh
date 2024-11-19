@@ -41,17 +41,17 @@ router ospf6
   ospf6 router-id 10.10.10.$((i+1))
   bfd all-interfaces
 interface eth0
-  ipv6 ospf6 bfd profile BFDPROF
+  ipv6 ospf6 bfd profile bfdd
 interface eth1
-  ipv6 ospf6 bfd profile BFDPROF
+  ipv6 ospf6 bfd profile bfdd
 interface eth2
-  ipv6 ospf6 bfd profile BFDPROF
+  ipv6 ospf6 bfd profile bfdd
 interface eth3
-  ipv6 ospf6 bfd profile BFDPROF
+  ipv6 ospf6 bfd profile bfdd
 interface eth4
-  ipv6 ospf6 bfd profile BFDPROF
+  ipv6 ospf6 bfd profile bfdd
 interface eth5
-  ipv6 ospf6 bfd profile BFDPROF
+  ipv6 ospf6 bfd profile bfdd
 exit
 !
 end"
@@ -60,7 +60,7 @@ end"
 done;
 
 for((i=0;i<=99;i++)); do
-bfd_conf="bfd profile BFDPROF
+bfd_conf="bfd profile bfdd
   detect-multiplier 3
   receive-interval 100
   transmit-interval 100"

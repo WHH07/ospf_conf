@@ -13,9 +13,9 @@ router ospf6
   ospf6 router-id 10.10.10.101
   bfd all-interfaces
 interface eth0
-  ipv6 ospf6 bfd profile BFDPROF
+  ipv6 ospf6 bfd profile bfdd
 interface eth1
-  ipv6 ospf6 bfd profile BFDPROF
+  ipv6 ospf6 bfd profile bfdd
 exit
 !
 end"
@@ -40,11 +40,11 @@ router ospf6
   ospf6 router-id 10.10.10.102
   bfd all-interfaces
 interface eth0
-  ipv6 ospf6 bfd profile BFDPROF
+  ipv6 ospf6 bfd profile bfdd
 interface eth1
-  ipv6 ospf6 bfd profile BFDPROF
+  ipv6 ospf6 bfd profile bfdd
 interface eth2
-  ipv6 ospf6 bfd profile BFDPROF
+  ipv6 ospf6 bfd profile bfdd
 exit
 !
 end"
@@ -66,9 +66,9 @@ router ospf6
   ospf6 router-id 10.10.10.103
   bfd all-interfaces
 interface eth0
-  ipv6 ospf6 bfd profile BFDPROF
+  ipv6 ospf6 bfd profile bfdd
 interface eth1
-  ipv6 ospf6 bfd profile BFDPROF
+  ipv6 ospf6 bfd profile bfdd
 exit
 !
 end"
@@ -76,7 +76,7 @@ end"
 echo "$frr_conf_gs2" > gs_2/frr_conf/frr.conf
 
 for((i=0;i<=2;i++)); do
-bfd_conf="bfd profile BFDPROF
+bfd_conf="bfd profile bfdd
   detect-multiplier 3
   receive-interval 100
   transmit-interval 100"
