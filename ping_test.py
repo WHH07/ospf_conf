@@ -89,15 +89,3 @@ if __name__ == "__main__":
         shutil.rmtree(snapshot_dir)
     snapshot_dir = unzip_file(snapshot_zip_path, snapshot_dir)
 
-    # ping日志文件路径
-    ping_log_path = "downloaded_file/Sat3/frr_log/ping_log.txt"
-
-    # 分析ping日志，获取断连次数和每次断连时间
-    disconnection_count, disconnection_times = analyze_ping_log(ping_log_path)
-
-    print(f"Ping was interrupted {disconnection_count} times.")
-    for i, time_str in enumerate(disconnection_times):
-        print(f"Disconnection {i + 1} at: {time_str}")
-
-    end_time = time.time()
-    print(f"Execution time: {end_time - start_time}s")
